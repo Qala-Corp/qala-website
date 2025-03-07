@@ -2,12 +2,10 @@ import Link from "next/link"
 import { ArrowLeft, CalendarDays } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Header } from "@/components/header"
 
 export default function IntroducingQalaV095Page() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
       <main className="flex-1">
         <article className="container max-w-3xl py-6 lg:py-12">
           <div className="space-y-4">
@@ -59,7 +57,11 @@ export default function IntroducingQalaV095Page() {
             </p>
             <h2 className="text-2xl font-bold">Getting Started</h2>
             <p>
-              To upgrade to v0.9.5, simply run <code>npm install -g qala@latest</code> or check our{" "}
+              To upgrade to v0.9.5, simply run
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto">
+                <code className="text-sm text-foreground">{`npm install -g qala@latest`}</code>
+              </pre>
+              or check our{" "}
               <Link href="/docs/upgrade-guide" className="text-primary hover:underline">
                 upgrade guide
               </Link>{" "}
@@ -75,4 +77,3 @@ export default function IntroducingQalaV095Page() {
     </div>
   )
 }
-

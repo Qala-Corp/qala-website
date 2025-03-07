@@ -7,7 +7,7 @@ import { Header } from "@/components/header"
 export default function QalaOpenSourceCommitmentPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      
       <main className="flex-1">
         <article className="container max-w-3xl py-6 lg:py-12">
           <div className="space-y-4">

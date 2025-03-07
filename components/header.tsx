@@ -16,16 +16,18 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Logo } from "@/components/ui/logo"
+import { ThemeToggle } from "@/components/theme-toggle"
+
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/10">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6 md:gap-8 lg:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <Logo className="h-6 w-6" />
+            <Logo className="h-auto w-[2rem] [filter:invert(var(--bulb))]" />
             <span className="font-bold text-xl">Qalá</span>
           </Link>
           <NavigationMenu className="hidden md:flex">
@@ -52,7 +54,7 @@ export function Header() {
                       <NavigationMenuLink asChild>
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/docs/integrations/vercel"
+                          href="/integrations/vercel"
                         >
                           <div className="text-sm font-medium leading-none">Vercel Integration</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -65,7 +67,7 @@ export function Header() {
                       <NavigationMenuLink asChild>
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/docs/integrations/docker"
+                          href="/integrations/docker"
                         >
                           <div className="text-sm font-medium leading-none">Docker Integration</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -78,7 +80,7 @@ export function Header() {
                       <NavigationMenuLink asChild>
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/docs/integrations/github-actions"
+                          href="/integrations/github-actions"
                         >
                           <div className="text-sm font-medium leading-none">GitHub Actions</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -116,11 +118,11 @@ export function Header() {
                       <NavigationMenuLink asChild>
                         <a
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          href="/docs/guides"
+                          href="/docs/quick-start"
                         >
-                          <div className="text-sm font-medium leading-none">Guides</div>
+                          <div className="text-sm font-medium leading-none">Quick Start Guide</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Step-by-step tutorials for common use cases.
+                            Get Ready in 5 Minutes
                           </p>
                         </a>
                       </NavigationMenuLink>
@@ -154,16 +156,12 @@ export function Header() {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>About</NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+
             </NavigationMenuList>
           </NavigationMenu>
         </div>
         <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-2">
             <Link href="https://github.com/Qala-Corp/qala.js" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="icon">
                 <Github className="h-5 w-5" />
@@ -176,6 +174,9 @@ export function Header() {
                 <span className="sr-only">npm</span>
               </Button>
             </Link>
+            <div className="flex flex-col items-center gap-4">
+              <ThemeToggle />
+            </div>
             <Link href="/login">
               <Button variant="ghost">Log in</Button>
             </Link>
@@ -242,4 +243,3 @@ export function Header() {
     </header>
   )
 }
-

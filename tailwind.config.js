@@ -23,6 +23,7 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        filter: {bulb: "invert(var(--bulb))"},
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -75,4 +76,3 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 }
-

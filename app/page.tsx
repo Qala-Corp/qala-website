@@ -5,14 +5,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ComparisonTable } from "@/components/comparison-table"
 import { FeatureGrid } from "@/components/feature-grid"
-import { Header } from "@/components/header"
+
 import { PricingCards } from "@/components/pricing-cards"
 import { Testimonial } from "@/components/testimonial"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-background to-muted">
@@ -51,9 +50,35 @@ export default function Home() {
                   </div>
                   <pre className="mt-10 font-mono text-sm text-green-500">
                     <code>
-                      $ qala init{"\n"}✓ Project initialized{"\n"}$ qala add API_KEY{"\n"}? Enter value for API_KEY:
-                      ********{"\n"}✓ Secret added and encrypted{"\n"}$ qala run -- npm start{"\n"}✓ Running with secure
-                      environment
+                    {`
+# Install Qalá
+$ npm i qala
+
+# Initialize Qalá in your project
+$ qala init
+
+# Authenticate and sync secrets
+$ qala auth
+
+# Import production secrets
+$ qala import .env.production
+
+# Now use it anywhere, system is language-agnostic
+node -e "
+
+// ✧ Magic happens here ✧
+const app = require('qala')();
+
+// Use secrets exactly like before
+app.get('/api/data', async (req, res) => {
+  const apiKey = process.env.API_KEY;
+
+  const data = await fetchData(apiKey);
+  return res.json(data);
+});
+
+"
+`}
                     </code>
                   </pre>
                 </div>
@@ -208,4 +233,3 @@ export default function Home() {
     </div>
   )
 }
-

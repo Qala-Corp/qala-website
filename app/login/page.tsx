@@ -1,16 +1,14 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Header } from "@/components/header"
+import { SSOButtons } from "@/components/sso-buttons"
 
 export default function LoginPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-background to-muted">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
@@ -29,6 +27,15 @@ export default function LoginPage() {
                     Log In <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+                  </div>
+                </div>
+                <SSOButtons />
                 <div className="text-sm text-muted-foreground">
                   Don't have an account?{" "}
                   <Link href="/signup" className="text-primary hover:underline">
@@ -48,4 +55,3 @@ export default function LoginPage() {
     </div>
   )
 }
-

@@ -7,7 +7,7 @@ import { Header } from "@/components/header"
 export default function UpgradeGuidePage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      
       <main className="flex-1">
         <div className="container max-w-3xl py-6 lg:py-12">
           <Button asChild variant="ghost" className="mb-4">
