@@ -4,7 +4,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 export function ComparisonTable() {
   return (
-    <Table className="border">
+    <Table className="border bg-half-secondary backdrop-blur">
       <TableHeader>
         <TableRow>
           <TableHead className="w-[200px]">Feature</TableHead>
@@ -136,4 +136,3 @@ export function ComparisonTable() {
     </Table>
   )
 }
-

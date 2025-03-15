@@ -36,10 +36,11 @@
 
     --bulb: 0;
     --secret-color: rgba(0, 0, 0, 0.1);
+    --upside: 0;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222.2 84% 4.9% 0.08;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -52,6 +53,7 @@
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
+    --half-secondary: 217.2 32.6% 17.5% 0.05;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -68,6 +70,7 @@
     --ring: 212.7 26.8% 83.9%;
     --bulb: 1;
     --secret-color: rgba(255, 255, 255, 0.1);
+    --upside: 1;
   }
 }
 

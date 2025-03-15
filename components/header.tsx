@@ -23,12 +23,13 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/10">
+    <header className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6 md:gap-8 lg:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <Logo className="h-auto w-[2rem] [filter:invert(var(--bulb))]" />
+            <Logo className="h-auto w-[2rem] filter invert-[--bulb]" />
             <span className="font-bold text-xl">Qalá</span>
+            <sub className="text-xs">v0.9.0</sub>
           </Link>
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
@@ -122,7 +123,7 @@ export function Header() {
                         >
                           <div className="text-sm font-medium leading-none">Quick Start Guide</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            Get Ready in 5 Minutes
+                            Get Ready in a Minute
                           </p>
                         </a>
                       </NavigationMenuLink>
@@ -199,7 +200,6 @@ export function Header() {
                     <span className="font-bold text-xl">Qalá</span>
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-                    <X className="h-5 w-5" />
                     <span className="sr-only">Close menu</span>
                   </Button>
                 </div>

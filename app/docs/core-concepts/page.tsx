@@ -16,7 +16,7 @@ export default function CoreConceptsPage() {
             </Link>
           </Button>
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl mb-4">Core Concepts</h1>
-          <div className="prose dark:prose-invert max-w-none">
+          <div className="prose dark:prose-invert prose prose-sm sm:prose-sm lg:prose-sm xl:prose-sm prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-li:text-foreground prose-em:text-foreground prose-a:text-primary prose-code:bg-muted prose-code:text-primary prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-muted prose-pre:px-4 prose-pre:py-3 prose-pre:rounded max-w-none">
             <p>This guide explains the fundamental concepts and architecture of Qalá's secrets management system.</p>
 
             <h2 id="secrets-management-fundamentals">Secrets Management Fundamentals</h2>

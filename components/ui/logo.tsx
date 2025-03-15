@@ -1,14 +1,14 @@
 import Image from "next/image"
+import qala from "@/public/qala-logo-128.png"
 
 export function Logo({ className }: { className?: string }) {
   return (
     <Image
-      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Qala%CC%80-big-logo-9wzfPMN7B5E7CVlBCnBDJ55Y6kiW78.png"
+      src={qala}
       alt="Qalá Logo"
       width={32}
-      height={32}
+      height={42}
       className={className}
     />
   )
 }
-

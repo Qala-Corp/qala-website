@@ -5,6 +5,8 @@ import "./globals.css"
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/providers/theme-provider"
+import BackgroundAnimation from '@/components/BackgroundAnimation';
+
 
 
 const inter = Inter({ subsets: ["latin"] })
@@ -23,8 +25,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <BackgroundAnimation />
         <Header />
+        <div className="block relative h-[calc(100%-65px)] w-full mt-[65px]">
           {children}
+        </div>
         </ThemeProvider>
         <Footer />
       </body>

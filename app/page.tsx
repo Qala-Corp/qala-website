@@ -9,24 +9,28 @@ import { FeatureGrid } from "@/components/feature-grid"
 import { PricingCards } from "@/components/pricing-cards"
 import { Testimonial } from "@/components/testimonial"
 
+import {TerminalAnimation} from '@/components/TerminalAnimation';
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex flex-col">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-background to-muted">
+        <section className="w-full min-h-[calc(100vh-65px)]">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
+            <div className="flex flex-col lg:flex-row lg:space-x-2 min-h-[calc(100vh-65px)] lg:min-h-0">
+
+              <div className="w-full lg:w-5/12 min-h-screen lg:min-h-0 flex flex-col justify-center sticky top-0 lg:relative pt-16 lg:pt-0">
+
+                <div className="space-y-2 mb-6">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Secrets Management That Finally Makes Sense
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    The fastest, most secure way to manage environment variables and sensitive data across your entire
-                    development lifecycle.
+                    The fastest, most secure way to manage environment variables and sensitive data across your entire development lifecycle.
                   </p>
                 </div>
+
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button asChild size="lg" className="gap-1">
                     <Link href="/signup">
@@ -37,58 +41,42 @@ export default function Home() {
                     <Link href="/docs">View Documentation</Link>
                   </Button>
                 </div>
+
               </div>
-              <div className="flex items-center justify-center">
-                <div className="relative w-full h-full min-h-[300px] rounded-lg border bg-background p-4 shadow-lg">
-                  <div className="absolute top-0 left-0 right-0 h-12 bg-muted rounded-t-lg border-b flex items-center px-4">
-                    <div className="flex space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div className="ml-4 text-xs font-mono text-muted-foreground">Terminal</div>
-                  </div>
-                  <pre className="mt-10 font-mono text-sm text-green-500">
-                    <code>
-                    {`
-# Install Qalá
-$ npm i qala
 
-# Initialize Qalá in your project
-$ qala init
+              {/* Terminal animation section */}
+              <div className="w-full lg:w-7/12 min-h-screen lg:min-h-0 flex items-center justify-center">
+                <TerminalAnimation />
+              </div>
+            </div>
+          </div>
+        </section>
 
-# Authenticate and sync secrets
-$ qala auth
-
-# Import production secrets
-$ qala import .env.production
-
-# Now use it anywhere, system is language-agnostic
-node -e "
-
-// ✧ Magic happens here ✧
-const app = require('qala')();
-
-// Use secrets exactly like before
-app.get('/api/data', async (req, res) => {
-  const apiKey = process.env.API_KEY;
-
-  const data = await fetchData(apiKey);
-  return res.json(data);
-});
-
-"
-`}
-                    </code>
-                  </pre>
-                </div>
+        {/* Why Section */}
+        <section className="w-full min-h-[calc(100vh-65px)] flex items-center justify-center">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-10">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Why?</h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+                Your application's secrets are likely <strong>exposed</strong> right now. <br />Environment variables, .env, application.properties files, and basic encryption leave backdoors wide open to attackers — precisely where hackers focus their efforts first, targeting the keys to your entire kingdom.<br />
+                Qalá closes these gaps with bank-grade security that works silently behind the scenes—with virtually zero changes to your existing code.
+                </p>
+              </div>
+              <div className="gap-2 flex flex-row">
+              <Button asChild variant="outline" size="lg">
+                <Link href="/docs">Read Full Post</Link>
+              </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/docs">Explore White Paper</Link>
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
         {/* Main Benefits Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section className="w-full py-12 md:py-24 lg:py-24 min-h-[calc(100vh-65px)] flex items-center justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -146,7 +134,7 @@ app.get('/api/data', async (req, res) => {
         </section>
 
         {/* Features Grid */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section className="w-full py-12 md:py-24 lg:py-24 bg-muted min-h-[calc(100vh-65px)]">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -161,7 +149,7 @@ app.get('/api/data', async (req, res) => {
         </section>
 
         {/* Competitor Comparison */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section className="w-full py-12 md:py-24 lg:py-24 min-h-[calc(100vh-65px)]">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -178,7 +166,7 @@ app.get('/api/data', async (req, res) => {
         </section>
 
         {/* Pricing Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section className="w-full py-12 md:py-24 lg:py-24 bg-muted min-h-[calc(100vh-65px)]">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -193,14 +181,14 @@ app.get('/api/data', async (req, res) => {
         </section>
 
         {/* Testimonial */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
+        <section className="hidden w-full py-12 md:py-24 lg:py-24">
+          <div className="container flex items-center justify-center">
             <Testimonial />
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+        <section className="section-dark w-full py-12 md:py-24 lg:py-24 min-h-[calc(100vh-65px)] flex items-center justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -212,7 +200,7 @@ app.get('/api/data', async (req, res) => {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button asChild size="lg" variant="secondary" className="gap-1">
+                <Button asChild size="lg" className="gap-1">
                   <Link href="/signup">
                     Start Securing for Free <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -221,7 +209,6 @@ app.get('/api/data', async (req, res) => {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
                 >
                   <Link href="/contact">Contact Sales</Link>
                 </Button>

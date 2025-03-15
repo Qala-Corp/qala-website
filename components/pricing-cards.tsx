@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 export function PricingCards() {
   return (
     <Tabs defaultValue="monthly" className="w-full max-w-5xl mx-auto mt-8">
-      <TabsList className="grid w-[400px] grid-cols-2 mx-auto mb-8">
+      <TabsList className="grid w-[400px] max-w-full grid-cols-2 mx-auto mb-8">
         <TabsTrigger value="monthly">Monthly</TabsTrigger>
         <TabsTrigger value="annually">Annually (Save 20%)</TabsTrigger>
       </TabsList>
@@ -400,4 +400,3 @@ export function PricingCards() {
     </Tabs>
   )
 }
-
